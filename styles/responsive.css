@@ -3,8 +3,12 @@
   .banner,
   .services,
   .donate-carts,
-  .projects-container {
+  .projects-container,
+  .footer {
     margin: 0 1rem;
+  }
+  .copy-componet {
+    padding: 0 1rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -23,6 +27,9 @@
   }
   main {
     height: 60rem;
+  }
+  .footer .components {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 725px) {
@@ -123,6 +130,24 @@
     gap: 5rem;
     & div {
       max-width: 35rem;
+    }
+  }
+  .copy-componet {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer {
+    display: grid;
+    justify-items: center;
+  }
+  .footer .components {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 35rem;
+    justify-items: start;
+    & .recentWorks {
+      & div {
+        gap: 2rem;
+      }
     }
   }
 }
