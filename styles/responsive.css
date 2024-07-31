@@ -1,7 +1,8 @@
 @media screen and (max-width: 1200px) {
   nav,
   .banner,
-  .services {
+  .services,
+  .donate-carts {
     margin: 0 1rem;
   }
 }
@@ -113,6 +114,9 @@
   }
   .services {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .donate-carts {
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 520px) {

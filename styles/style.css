@@ -264,7 +264,71 @@ main {
 .services .water {
   background-color: #3f3221;
 }
-
+/* donating section style */
+.donate {
+  background: url("../images/donation-bg.jpg");
+  background-size: cover;
+  color: var(--white);
+}
+.donate-carts {
+  margin: 0 auto;
+  padding: 6rem 0;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+.donate-carts h2 {
+  font-size: calc(var(--font-1) + 0.3rem);
+  text-transform: capitalize;
+}
+.donate-carts h4 {
+  font-size: calc(var(--font-3) + 0.1rem);
+}
+.donate-carts .carts {
+  max-width: 55rem;
+  padding: 5rem 4rem;
+  background-size: cover;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  & h4 {
+    position: relative;
+    margin-bottom: 3rem;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1.5rem;
+      height: 0.4rem;
+      width: 4rem;
+    }
+  }
+  .btn {
+    margin-top: 3rem;
+  }
+}
+.donate-carts .cart1 {
+  background: url("../images/donation-bg-1.jpg");
+  background-size: cover;
+  & h2 {
+    color: var(--second-color);
+  }
+  & h4::before {
+    background-color: var(--second-color);
+  }
+}
+.donate-carts .cart2 {
+  background: url("../images/donation-bg-2.jpg");
+  background-size: cover;
+  background-position: center;
+  & h2 {
+    color: var(--primary-color);
+  }
+  & h4::before {
+    background-color: var(--primary-color);
+  }
+}
 /* scroll animation  */
 .services div {
   animation: scrollAnimation;
@@ -274,7 +338,6 @@ main {
 @keyframes scrollAnimation {
   from {
     opacity: 0;
-    -o-transform: translateY(5%);
   }
   to {
     opacity: 1;
@@ -308,6 +371,30 @@ main {
   -webkit-animation: autoShowAnimation 0.4s;
 }
 @keyframes autoShowAnimation {
+  from {
+    opacity: 0.5;
+    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+  }
+}
+.donate-carts .cart1,
+.donate-carts .cart2 {
+  animation: scrollAnimationD both;
+  -webkit-animation: scrollAnimationD both;
+  animation-timeline: view();
+}
+@keyframes scrollAnimationD {
   from {
     opacity: 0.5;
     transform: translateY(50%);
