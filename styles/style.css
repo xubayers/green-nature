@@ -152,6 +152,7 @@ nav > ul > li:last-child {
 .blog,
 .pages,
 .shope {
+  z-index: 99999;
   position: absolute;
   top: 100%;
   left: 0;
@@ -191,9 +192,13 @@ nav > ul > li:last-child {
 .goShope:hover .shope {
   display: block;
 }
+.bars i:nth-child(2) {
+  display: none;
+}
 .bars {
   display: none;
 }
+
 /* banner styel start */
 main {
   height: 70rem;
@@ -258,4 +263,65 @@ main {
 }
 .services .water {
   background-color: #3f3221;
+}
+
+/* scroll animation  */
+.services div {
+  animation: scrollAnimation;
+  -webkit-animation: scrollAnimation;
+  animation-timeline: view();
+}
+@keyframes scrollAnimation {
+  from {
+    opacity: 0;
+    -o-transform: translateY(5%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.banner h1,
+.banner h2 {
+  animation: autoShowAnimation 1s;
+  -webkit-animation: autoShowAnimation 1s;
+}
+@keyframes autoShowAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+    -webkit-transform: scale(0.2);
+    -moz-transform: scale(0.2);
+    -ms-transform: scale(0.2);
+    -o-transform: scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+}
+.banner .btn {
+  animation: autoShowAnimation 0.4s;
+  -webkit-animation: autoShowAnimation 0.4s;
+}
+@keyframes autoShowAnimation {
+  from {
+    opacity: 0.5;
+    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+  }
 }
