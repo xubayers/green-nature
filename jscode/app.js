@@ -18,3 +18,32 @@ bars.addEventListener("click", function(){
         toggle = true;
     }
 })
+
+// navs hover animation
+const items = document.querySelectorAll('nav>ul>li');
+const marker = document.querySelector('.marker');
+
+function indicator(e){
+    marker.style.width = e.offsetWidth+'px';
+    marker.style.left = e.offsetLeft+'px';
+}
+items.forEach(item => {
+    item.addEventListener('mouseover', (e) => {
+        indicator(e.target)
+    })
+    item.addEventListener('mouseout', () => {
+        marker.style.width = 100+'px';
+        marker.style.left = 0+'px';
+    })
+});
+
+// nav bar scroll and fixed after some time or distance
+window.addEventListener('scroll', function() {
+    const navBar = document.querySelector('header');
+    if (window.scrollY > 350) {
+        navBar.classList.add('fixed')
+    }
+    else {
+        navBar.classList.remove('fixed')
+    }
+})
